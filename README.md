@@ -18,7 +18,9 @@ python3 setup.py install
 ```
 
 # Examples
-The easysockets module contains 3 main classes: ServerSocket, ClientSocket and Connection. Below are examples on how to use each of them.
+The easysockets module contains 3 main classes: `ServerSocket`, `ClientSocket` and `Connection`. Below are examples on how to use each of them.
+
+`ServerSocket`:
 ```py
 # The ServerSocket class is used to create a server socket, to create an instance of the ServerSocket class you need a client handler, a client handler is a function that will be passed a connection, the client handler function can then, as the name suggests, handle the client/connection
 server_socket = ServerSocket(client_handler=lambda connection: connection.send(b"Hello, world!"))  # This handler just sends "Hello, world!" and then closes the connection
@@ -28,6 +30,7 @@ server_socket.listen(host="localhost", port=8080)
 
 # Now whenever a client connects, the lambda we made earlier will be called and will send "Hello, world!" to the client after which it'll close the connection
 ```
+`ClientSocket`:
 ```py
 # The ClientSocket class is used to connect to server sockets
 client_socket = ClientSocket()
@@ -44,6 +47,7 @@ print(connection.receive().decode())
 # Closing the connection (NOTE: This isn't necessary if you end the program but it's good practice to do it anyway)
 connection.close()
 ```
+`Connection`:
 ```py
 # Assume that we just connected to a server
 ...
