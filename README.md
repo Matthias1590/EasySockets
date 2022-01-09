@@ -11,7 +11,7 @@ or
 pip install git+https://github.com/Matthias1590/EasySockets.git
 ```
 
-You can also install it by cloning this repo and running the following commands
+You can also install it by cloning this repository and running the following commands:
 ```
 python3 setup.py build
 python3 setup.py install
